@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM'Lerde Halüsinasyonlar</title>
+</head>
+
+<body>
+    <br>
+    <a href="../../index.html">Ana Sayfa</a> <br> <br>
+    <a href="Eklerin Ekleri/machiavelli.html#machiavelli-kritik">Machiavelli'nin yönetim anlayışının kritiği için
+        tıklayın.</a>
+    <br><br>
+    <img usemap="#bolge" src="../../images/doga.jpg" alt="doğa görseli" width="400" height="350">
+    <map name="bolge">
+        <area shape="rect" coords="0,0,400,116" alt="Ana Sayfa" title="ANA SAYFA'YA GİDİYOR" href="../../index.html">
+        <area shape="rect" coords="0,117,400,233" alt="2. Hafta Ders" title="2. Haftanın dersine giderrrr."
+            href="2-ders.html">
+        <area shape="rect" coords="0,234,400,350" alt="Machiavelli'ye gider" title="Machiavelli'ye git."
+            href="Eklerin Ekleri/machiavelli.html">
+        <br><br>
+        <br>
+        <nav>
+            <a href="#dis-halusinasyon">Dışsal Halüsinasyonlar</a> <br>
+            <a href="#ic-halusinasyon">İçsel Halüsinasyonlar</a> <br>
+            <a href="#bolum-1">Bölüm 1: Halüsinasyonların Kökeni</a> <br>
+            <a href="#bolum-2">Bölüm 2: Halüsinasyonların Kalıcılığı</a> <br>
+            <a href="#cozum">Çözüm Önerileri</a>
+        </nav>
+
+        <br>
+        <hr>
+        <br>
+        <p><strong>Halüsinasyonlar</strong>: Dil modellerinin ürettiği, temelinde birer hata olan ancak yüzeysel olarak
+            inandrııcı görünen ifadelerdir. İlgili hatalar dil modellerinin eğitim verileri, dış gerçeklikle çelişen
+            (dışsal halüsinasyonlar) ya da kullanıcının istemiyle çelişen (içsel halüsinasyonlar) olası yanlışlıklar
+            olarak tanımlanıyor.</p>
+
+        <h1 id="dis-halusinasyon">Dışsal Halüsinasyonlar (Extrinsic Hallucinations)</h1>
+        <p>Dil modelinin <b>eğitim verileriyle veya dış gerçeklikle çelişen</b> bilgiler üretmesi. Model kendi öğrendiği
+            bilgilerle veya genel olarak kabul görmüş gerçeklerle uyumsuz, ancak yine de inandırıcı görünen ifadeler
+            ortaya koyar. Söz gelişi, Adam Kalai'nin doktora tezinin başlığı neydi sorusuna ChatGPT, DeepSeek, Gemma,
+            Llama gibi modeller, farklı ve hepsi yanlış olan tez başlıkları ve yıllar üretmiştir.</p>
+
+        <h1 id="ic-halusinasyon">İçsel Halüsinasyonlar (Intrinsic Hallucinations)</h1>
+        <p>Dil modelinin <b>kullanıcı istemiyle (prompt)</b> <b>çelişen</b> bilgiler üretmesidir. Kullanıcının doğrudan
+            sorduğu veya talep ettiği şeyin aksine kendi içinde tutarsız ve hatalı bir çıktı verir. Söz gelişi,
+            "DEEPSEEK" kelimesinde kaç tane D harfi var sorusuna DeepSeek-V3 "2" veya "3" gibi yanlış yanıtlar
+            vermiştir.</p> <br><br>
+
+        <p>Temel sorun modellerin belirsizlik durumunda "bilmiyorum" demek yerine istatistiksel olarak en olası görünen
+            yanıtı tahmin etmeye programlanmış olmasıdır.</p> <br><br>
+
+        <h1 id="bolum-1">Bölüm 1: Halüsinasyonların Kökeni – Ön Eğitim (Pre-training)</h1>
+        <p>Halüsinasyonların temeli modellerin devasa veri setleri üzerinden dilin istatistiksel yapısını öğrendiği ön
+            eğitim aşamasında atılır. Eğitim verisi tamamen hatasız olsa bile optimizasyon sürecinin kendisi hata
+            üretmeye eğilimlidir.</p> <br><br>
+
+        <h2 id="1-1">1.1. Ön Eğitimin Amacı ve Temel Mekanizma</h2>
+        <p>Ön eğitimin temel hedefi dilin olasılık dağılımını <i>(p)</i> öğrenerek <i>(p̂)</i> adında bir model dağılımı
+            oluşturmaktır. Bu genellikle <b>çapraz entropi kaybını (cross-entropy loss) minimize etmek</b> gibi
+            istatistiksel bir amaçla yapılır. Bu süreç modelin bir ifadenin doğruluğuna dair verdiği olasılık tahmininin
+            (güveninin) o ifadenin gerçekte doğru olma sıklığıyla eşleşmesi anlamına gelen <b>kalibrasyona
+                (calibration)</b> yol açar. İyi eğitilmiş bir temel model doğası gereği kalibre olur.</p> <br><br>
+
+        <h2 id="1-2">1.2. Teknik Çerçeve: "Is-It-Valid" (IIV) İndirgemesi</h2>
+        <p>İlgili makalenin merkezî teknik argümanı üretim probleminin zorluğunu daha basit olan ikili sınıflandırma
+            (binary classification) problemine indirgemek. <b>IIV Problemi:</b> "Bu ifade geçerli mi?" (+/-) sorusunu
+            cevaplayan bir sınıflandırıcıdır. Eğitim verileri yanıtların geçerli (+) veya hatalı (-) olarak
+            etiketlendiği çok sayıda örnekten oluşur. Dil modelleri çoğu zaman doğruluk veya başarı oranı gibi
+            doğru-yanlış ikilemine dayalı ikili metriklerle değerlendirilir. Bu derecelendirmede belirsizlik göstermek
+            veya yanıtı boş bırakmak alt-optimal sayılır ve “bilmiyorum” türü yanıtlar cezalandırılır. Modelin puanı
+            aşırı özgüvenli bir “en iyi tahmini” vermesiyle maksimize edilir. <b>İlişki:</b> Modelin üretimdeki hata
+            oranı, IIV sınıflandırmasındaki hata oranından daha düşük olamaz. Matematiksel olarak <i>(üretim hatası) ≥ 2
+                * (IIV hatası)</i>.</p> <br><br>
+
+        <h2 id="1-3">1.3. Ön Eğitimdeki Hata Faktörleri</h2>
+        <p><b>Epistemik Belirsizlik:</b> Doğum günleri gibi altında öğrenilebilir bir desen olmayan keyfî gerçekler
+            yüksek bir IIV hata oranına neden olur. Model bu bilgileri ezberlemek zorundadır. Eğitim verilerinde
+            yalnızca bir kez görünen (singleton) bir gerçek istatistiksel olarak gürültüden farksızdır ve modelin bu
+            konuda halüsinasyon görme olasılığı yüksektir.</p> <br><br>
+        <p><b>Kötü Modeller:</b> Model mimarisinin öğrenilmeye çalışılan kavramı temsil etmek için yetersiz olmasıdır.
+            Bu durum model ailesinin optimal hata oranını <i>(opt(G))</i> yükseltir ve kaçınılmaz olarak üretim
+            hatalarına yol açar.</p> <br><br>
+        <p><b>Dağılım Kayması (Distribution Shift):</b> Model, eğitimde gördüğü veri dağılımının dışında
+            (Out-of-Distribution, OOD) bir istemle karşılaştığında performansı düşer. BU da IIV sınıflandırıcısının yeni
+            ve beklenmedik durumlarda hata yapmasına neden olur, bu da doğrudan halüsinasyon olarak yansır.</p> <br><br>
+        <p><b>GIGO (Garbage In, Garbage Out):</b> Büyük veri setleri genellikle çok sayıda olgusal hata içerir.
+            Kalitesiz veya hatalı veriyle eğitilen sistemlerin kaçınılmaz olarak hatalı veya değersiz çıktılar üretmesi
+            durumudur.</p> <br><br>
+        <p><b>Hesaplama Zorluğu:</b> Kriptografik bir şifreyi çözmek gibi hesaplama açısından zor problemler modelin
+            doğru yanıtı bulmasını engeller.</p> <br><br>
+
+        <h1 id="bolum-2">Bölüm 2: Halüsinasyonların Kalıcılığı - Değerlendirme ve Teşvik Mekanizmaları</h1>
+        <p>Ön eğitim hatalarının kökenini açıklarken bu hataların neden eğitim sonrası (post-training) aşamada devam
+            ettiği ve hatta pekiştirildiği sorusu <b>sosyo-teknik</b> bir problemdir. Sorun modellerin yeteneklerinde
+            değil, onları değerlendiren teşvik yapısındadır.</p> <br><br>
+
+        <h2 id="2-1">2.1. İkili Değerlendirme Problemi</h2>
+        <p>Mevcut dil modeli değerlendirmelerinin (benchmark) büyük çoğunluğu <b>ikili (binary) bir derecelendirme
+                mantığına dayanır:</b> Doğru cevap: +1 puan. Yanlış cevap veya "Bilmiyorum" (abstention): 0 puan.</p>
+        <br><br>
+
+        <h2 id="2-2">2.2. Rasyonel Davranış Olarak Halüsinasyon</h2>
+        <p>Bu puanlama sistemi altında, bir model rasyonel bir ajan gibi davranarak beklenen puanını maksimize etmeye
+            çalışır. "Bilmiyorum" demek garanti 0 puan anlamına geldiği için, emin olunmasa bile bir tahminde bulunmanın
+            beklenen değeri, doğru olma olasılığı sıfırdan büyük olduğu sürece her zaman sıfırdan büyüktür. Bu nedenle
+            belirsizliği kabul etmek <b>alt-optimal (sub-optimal)</b> bir stratejidir. Model en yüksek puanı almak için
+            sürekli sınav çözme modunda kalır ve en olası tahmini üreterek bir nevi kumar oynar.</p> <br><br>
+
+        <h1 id="cozum">Çözüm?</h1>
+        <p>Çözüm sosyo-teknik bir çözüm. Tüm yapay zekâ camiasının değerlendirme sistemini kökünden değiştirmesi
+            gerekiyor. Yanlış cevaplara negatif puan verilmeli, istemler modele hangi güven seviyesinin üzerinde cevap
+            vermesi gerektiğini açıkça belirtmeli. Bu değişiklik modelleri basit doğruluk maksimizasyonundan risk-ayarlı
+            bir karar verme sürecine yönlendirecektir. Bu da <b>davranışsal kalibrasyon (behavioral calibration)</b>
+            olarak adlandırılır.</p> <br><br>
+
+        <h3 id="kaynakca">Kaynakça</h3>
+        <p>Kalai, A. T., Nachum, O., Vempala, S. S. ve Zhang, E. (2025). Why language models hallucinate. <i>arXiv
+                preprint arXiv:2509.04664</i>.</p>
+</body>
+
+</html>
