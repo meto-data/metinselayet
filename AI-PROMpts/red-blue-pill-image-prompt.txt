@@ -1,0 +1,25 @@
+# Red Pill vs Blue Pill Image Map - AI Image Generation Prompt
+
+## Prompt:
+"Create a dramatic, cinematic split-screen style image representing the iconic 'Red Pill vs Blue Pill' choice from The Matrix. 
+
+LEFT SIDE (Blue Pill):
+- Cool blue color palette with cyan/teal tones
+- Dreamy, peaceful, comfortable illusion theme
+- Soft, ethereal glow
+- Text overlay: 'BLUE PILL - Stay in Comfort'
+- Visual elements: Clouds, smooth gradients, calm atmosphere
+
+RIGHT SIDE (Red Pill):
+- Hot red/orange color palette 
+- Intense, awakening, truth-seeking theme
+- Sharp, dramatic lighting
+- Text overlay: 'RED PILL - Wake Up to Truth'
+- Visual elements: Glitch effects, digital rain, intense atmosphere
+
+CENTER: A clear dividing line between the two sides
+Style: Cinematic poster, high contrast, dramatic lighting
+Dimensions: 800x400 pixels (wide format for split effect)
+Aesthetic: Modern, photorealistic with subtle digital/cyberpunk elements
+
+IMPORTANT: The image should be split exactly in half vertically - left side blue, right side red - so it can be used as an image map with two clickable areas."
