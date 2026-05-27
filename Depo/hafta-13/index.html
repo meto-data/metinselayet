@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tasarım - Hafta 13</title>
+    <style>
+        #kutu{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+<script>
+
+    let renkler = ["red", "blue", "green", "purple", "yellow"];
+    let index = 0;
+
+    setInterval(function(){
+document.getElementById("kutu").style.backgroundColor = renkler[index];
+index++;
+
+if (index >=renkler.length){
+    index = 0;
+}
+
+    },500);
+</script>
+<script>
+
+
+    function hareket_ileri(){
+        let konum = 0;
+        let kutu = document.getElementById("kutu");
+        let animasyon = setInterval(function(){
+         if (konum>=400){
+            clearInterval(animasyon);
+         }else{
+            konum++;
+            kutu.style.left = konum + "px";
+         } 
+        },5);
+    }
+
+    function hareket_geri(){
+    let konum = 400;
+    let kutu = document.getElementById("kutu");
+    let animasyon = setInterval(function(){
+        if (konum <=0){
+            clearInterval(animasyon);
+        }
+        else{
+            konum--;
+            kutu.style.left = konum + "px";
+        }
+    },5);
+
+    }
+</script>
+</head>
+<body>
+    <div id="kutu"></div>
+<button onclick="hareket_ileri()">İleri Hareket Et</button>
+<button onclick="hareket_geri()">Geri Hareket Et</button>
+
+
+</body>
+</html>

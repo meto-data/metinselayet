@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Notları: Tablolar, Listeler ve Blok Yapısı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Ders Notları: Yapısal Etiketler ve Düzen</h1>
+
+    <div class="bolum">
+        <h2>1. Sayfa Başlığı - <code>&lt;title&gt;</code></h2>
+        <p><span class="etiket">&lt;title&gt;</span> : Sayfanın başlığını belirler. Şu an tarayıcı sekmenize bakarsanız bu başlığı görebilirsiniz.</p>
+        <div class="vurgu">
+            <strong>SEO Notu:</strong> Arama motorları buradaki kelimelere bakar. Ayrıca "Favoriler"e ekleme yapınca bu isim kullanılır.
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="bolum">
+        <h2>2. Tablolar - <code>&lt;table&gt;</code></h2>
+        <p>Veri listelemek için kullanılır. Eskiden sayfa düzeni (layout) için kullanılırdı ama artık sadece veri için kullanıyoruz.</p>
+        
+        <table>
+            <caption>Haftalık Ders Programı (Caption Örneği)</caption>
+            <thead>
+                <tr>
+                    <th>Ders Kodu (th)</th>
+                    <th>Ders Adı (th)</th>
+                    <th>Kontenjan (th)</th>
+                    <th>Not (th)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>YBS201</td>
+                    <td>Web Tasarımı</td>
+                    <td>60</td>
+                    <td rowspan="2">Rowspan: İki satırı birleştirdi</td>
+                </tr>
+                <tr>
+                    <td>YBS202</td>
+                    <td>Veritabanı</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;">Colspan: Üç sütunu tek hücre yaptı</td>
+                    <td>Bitti</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><span class="etiket">&lt;tr&gt;</span>: Satır, <span class="etiket">&lt;th&gt;</span>: Başlık hücresi (kalın/ortalı), <span class="etiket">&lt;td&gt;</span>: Veri hücresi.</p>
+    </div>
+
+    <hr>
+
+    <div class="bolum">
+        <h2>3. Listeler (Lists)</h2>
+        
+        <h3>Sırasız Liste (Unordered) - <code>&lt;ul&gt;</code></h3>
+        <ul type="square">
+            <li>Madde 1 (Kare işaretli - square)</li>
+            <li>Madde 2</li>
+        </ul>
+
+        <h3>Sıralı Liste (Ordered) - <code>&lt;ol&gt;</code></h3>
+        <ol type="I" start="5">
+            <li>Roma Rakamı "V"den başlattık (type="I" start="5")</li>
+            <li>İkinci Eleman
+                <ul style="margin-top: 10px;">
+                    <li>İç içe liste örneği (Nested List)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Açıklama Listesi - <code>&lt;dl&gt;</code></h3>
+        <dl>
+            <dt><span class="etiket">&lt;dt&gt;</span>: HTML</dt>
+            <dd><span class="etiket">&lt;dd&gt;</span>: HyperText Markup Language kelimelerinin kısaltmasıdır.</dd>
+        </dl>
+    </div>
+
+    <hr>
+
+    <div class="bolum">
+        <h2>4. Block ve Inline Element Farkı</h2>
+        
+        <div style="border: 2px solid #e74c3c; background: #fadbd8; margin: 5px 0; padding: 5px;">
+            <strong>Block Element (&lt;p&gt;, &lt;div&gt;, &lt;h1&gt;):</strong> 
+            Bu kutu kırmızı çerçeveli bir bloktur. Satırı %100 kaplar ve yanına kimseyi almaz.
+        </div>
+
+        <p>
+            Bu bir paragraftır ama içindeki 
+            <span style="border: 2px solid #27ae60; background: #d4efdf; padding: 2px 5px;">bu yeşil alan bir SPAN yani INLINE</span> 
+            elementtir. Gördüğünüz gibi sadece içindeki yazı kadar yer kaplar, satırı bölmez.
+        </p>
+
+        <div class="vurgu">
+            <strong>Altın Kural:</strong> Bir inline (satıriçi) elementin içine ASLA bir block element yazılamaz!
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="bolum">
+        <h2>5. Taşıyıcılar ve Semantik Web</h2>
+        <p><span class="etiket">&lt;div&gt;</span>: Blok seviyesinde genel bir kapsayıcıdır. CSS ile şekil verilir.</p>
+        <p><span class="etiket">&lt;span&gt;</span>: Satıriçi metinleri gruplamak için kullanılır.</p>
+        
+        <div style="background:#eee; padding:10px;">
+            <h3>Anlamsal (Semantik) Etiketler</h3>
+            <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code> gibi etiketler <code>&lt;div&gt;</code> ile aynı işi yapar ama Google'a "burası navigasyon kısmıdır" diye bilgi verir.
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="bolum">
+        <h2>6. Class ve ID Farkı</h2>
+        <p><span class="etiket">ID (#)</span>: Sayfada tektir (T.C. No gibi). Bir ID sadece bir elemana verilir.</p>
+        <p><span class="etiket">Class (.)</span>: Birden fazla elemana verilebilir (Okul üniforması gibi).</p>
+        
+        <div class="ornek-class" style="color: blue;">Ben 'ornek-class' sınıfına sahibim.</div>
+        <div class="ornek-class" style="color: blue;">Ben de aynı sınıfa sahibim.</div>
+        <div id="ozel-id" style="font-weight: bold;">Ben ise 'ozel-id' kimliğine sahibim, benden başka yok!</div>
+    </div>
+
+    <hr>
+
+    <div class="vurgu" style="background-color: #d1ecf1; border-left-color: #0c5460;">
+        <h2 style="margin-top:0; border:none; color:#0c5460;">🔥 Sınavda Çıkabilecek Kritik Sorular</h2>
+        <ul>
+            <li><strong>Soru:</strong> <code>&lt;th&gt;</code> ve <code>&lt;td&gt;</code> arasındaki fark nedir? <br> 
+                <em>Cevap: th başlıktır (kalın/ortalı), td standart veridir.</em></li>
+            <li><strong>Soru:</strong> Sütun birleştirmek için ne kullanılır? <br> 
+                <em>Cevap: colspan. (Satır için rowspan).</em></li>
+            <li><strong>Soru:</strong> <code>&lt;div&gt;</code> ve <code>&lt;span&gt;</code> farkı nedir? <br> 
+                <em>Cevap: Div block elementtir (yeni satıra geçer), Span inline elementtir (aynı satırda kalır).</em></li>
+            <li><strong>Soru:</strong> Semantik etiketler neden kullanılır? <br> 
+                <em>Cevap: Arama motorlarına sayfanın yapısını daha anlamlı anlatmak için (SEO).</em></li>
+        </ul>
+    </div>
+
+    </body>
+</html>
