@@ -6,47 +6,94 @@
     <title>Metin'in Çalışmaları</title>
     <style>
         body {
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background-color: #f0f4f0; /* Çok açık gri-yeşil bir arka plan */
+            color: #2d3436;
             margin: 0;
-            background-color: #f4f4f4;
+            padding: 0;
+            font-family: sans-serif;
+            text-align: center;
         }
-        h1 {
-            color: #333;
+
+        header {
+            background-color: #2d6a4f; /* Koyu, huzurlu bir orman yeşili */
+            color: white;
+            padding: 40px 10px;
             margin-bottom: 30px;
         }
-        .container {
-            display: flex;
-            gap: 20px;
+
+        .kapsayici {
+            width: 80%;
+            margin: auto;
         }
+
+        .secenekler {
+            margin-top: 50px;
+        }
+
         .box {
-            padding: 20px 40px;
-            background-color: #fff;
-            border: 2px solid #333;
+            display: inline-block;
+            width: 300px;
+            background-color: white;
+            border: 2px solid #b7e4c7; /* Yumuşak bir yeşil çerçeve */
+            padding: 30px;
+            margin: 15px;
             text-decoration: none;
-            color: #333;
+            color: #1b4332; /* Koyu yeşil metin */
             font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            font-size: 20px;
+            border-radius: 12px;
         }
+
         .box:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: #95d5b2; /* Hover durumunda biraz daha belirgin yeşil */
+            border-color: #74c69d;
+        }
+
+        .box p {
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 10px;
+            color: #52796f;
+        }
+
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <h1>Metin'in Çalışmaları</h1>
+    <header>
+        <div class="kapsayici">
+            <h1>Metin'in Çalışmaları</h1>
+            <p>Web Tasarım Portfolyosu</p>
+        </div>
+    </header>
 
-    <div class="container">
-        <a href="yeni-odev/index.html" class="box">Dönem Sonu Ödevi</a>
-        <a href="eski-odevler/index.html" class="box">Eski Ödevler</a>
+    <div class="kapsayici">
+        <div class="secenekler">
+            <a href="yeni-odev/index.html" class="box">
+                Dönem Sonu Ödevi
+                <p>Kitap Sepeti Projesi</p>
+            </a>
+
+            <a href="eski-odevler/index.html" class="box">
+                Eski Ödevler
+                <p>Haftalık Ders Çalışmaları</p>
+            </a>
+        </div>
     </div>
+
+    <footer>
+        <div class="kapsayici">
+            <p>2026 | Doğa Dostu Tasarım</p>
+        </div>
+    </footer>
 
 </body>
 </html>
