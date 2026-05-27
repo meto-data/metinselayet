@@ -1,0 +1,163 @@
+body {
+    background-color: #f2f2f2;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+.kapsayici {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+section, .icerik-arkaplani {
+    background-color: white;
+}
+
+nav {
+    background-color: #1d3557;
+    padding: 5px;
+}
+
+nav .kapsayici {
+    background-color: transparent; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #457b9d;
+}
+
+img {
+    border: 2px solid #dddddd;
+    padding: 15px;
+    background-color: white;
+    max-width: 95%;
+    display: block;
+    margin: 10px auto;
+}
+
+.kart img {
+    width: 200px;
+    height: 300px; 
+}
+
+#slider-kutu {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+    background-color: #fcfcfc;
+}
+
+#slider-resim {
+    max-width: 500px;
+    height: auto;
+}
+
+section {
+    padding: 25px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #1d3557;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.urun-listesi {
+    text-align: center;
+    padding: 10px;
+}
+
+.kart {
+    display: inline-block;
+    width: 28%; 
+    margin: 10px 1%;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.kart img {
+    width: 220px;
+    height: 320px;
+    object-fit: contain; 
+}
+
+
+input[type="submit"], input[type="reset"], button {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    background-color: #1D3557;
+    color:#fff;
+}
+
+input[type="text"], input[type="number"], input[type="email"], textarea {
+    width: 200px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    vertical-align: middle; 
+}
+
+input[type="range"] {
+    vertical-align: middle;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    vertical-align: middle;
+}
+
+.detay-tablo {
+    margin: 30px auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.detay-tablo th, .detay-tablo td {
+    padding: 18px; 
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+/* Yardımcı Sınıflar */
+.metin-merkez {
+    text-align: center;
+}
+
+.metin-sag {
+    text-align: right;
+}
+
+.arka-plan-gri {
+    background-color: #f2f2f2;
+}
+
+.sepet-ozet {
+    text-align: right;
+    padding: 20px;
+}
+
+.detay-resim {
+    width: 300px;
+}
+
+

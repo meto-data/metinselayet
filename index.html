@@ -3,17 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metin'in İnternet Sayfası</title>
+    <title>Metin'in Çalışmaları</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            padding: 20px 40px;
+            background-color: #fff;
+            border: 2px solid #333;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Metin'in internet sayfasıdır</h1> <br>
-    <nav>
-        <a href="#">1. Ödev (Zaten burası)</a> <br>
-        <a href="HTML/Ekler/3-odev.html">2. Ödev</a> <br>
-        <br>
-    </nav>
 
+    <h1>Metin'in Çalışmaları</h1>
 
-</map>
+    <div class="container">
+        <a href="yeni-odev/index.html" class="box">Dönem Sonu Ödevi</a>
+        <a href="eski-odevler/index.html" class="box">Eski Ödevler</a>
+    </div>
+
 </body>
 </html>

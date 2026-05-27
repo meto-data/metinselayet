@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Sepeti | Satın Al</title>
+    <link rel="icon" type="image/x-icon" href="../img/outliers.jpg">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="kapsayici">
+            <h1>Kitap Sepeti</h1>
+            <p>Felsefe, sosyoloji ve klasiklerden seçili kitaplar</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="kapsayici">
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="urunler.html">Ürünler</a>
+            <a href="sepet.html">Sepet</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="kapsayici icerik-arkaplani">
+        <section>
+            <h2>Kitap Satın Al</h2>
+            <p>Satın almak istediğiniz kitapları seçiniz (Hızlı Satın Al):</p>
+            
+            <table class="detay-tablo">
+                <caption><b>Tüm Kitaplar Listesi</b></caption>
+                <thead>
+                    <tr class="arka-plan-gri">
+                        <th>Seç</th>
+                        <th>Kitap Adı</th>
+                        <th>Yazar</th>
+                        <th>Fiyat</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="160" onclick="sepetHesapla()"></td>
+                        <td>Cesur Yeni Dünya</td>
+                        <td>Aldous Huxley</td>
+                        <td>160 TL</td>
+                        <td><button onclick="alert('Cesur Yeni Dünya satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="140" onclick="sepetHesapla()"></td>
+                        <td>Ahlak Mektupları</td>
+                        <td>Seneca</td>
+                        <td>140 TL</td>
+                        <td><button onclick="alert('Ahlak Mektupları satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="135" onclick="sepetHesapla()"></td>
+                        <td>Söylevler</td>
+                        <td>Epiktetos</td>
+                        <td>135 TL</td>
+                        <td><button onclick="alert('Söylevler satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="170" onclick="sepetHesapla()"></td>
+                        <td>Outliers</td>
+                        <td>Malcolm Gladwell</td>
+                        <td>170 TL</td>
+                        <td><button onclick="alert('Outliers satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="150" onclick="sepetHesapla()"></td>
+                        <td>Gösteri Toplumu</td>
+                        <td>Guy Debord</td>
+                        <td>150 TL</td>
+                        <td><button onclick="alert('Gösteri Toplumu satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="145" onclick="sepetHesapla()"></td>
+                        <td>Tüketim Toplumu</td>
+                        <td>Jean Baudrillard</td>
+                        <td>145 TL</td>
+                        <td><button onclick="alert('Tüketim Toplumu satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="200" onclick="sepetHesapla()"></td>
+                        <td>Arı Usun Eleştirisi</td>
+                        <td>Immanuel Kant</td>
+                        <td>200 TL</td>
+                        <td><button onclick="alert('Arı Usun Eleştirisi satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="190" onclick="sepetHesapla()"></td>
+                        <td>Tinin Görüngübilimi</td>
+                        <td>G.W.F. Hegel</td>
+                        <td>190 TL</td>
+                        <td><button onclick="alert('Tinin Görüngübilimi satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="155" onclick="sepetHesapla()"></td>
+                        <td>Tractatus Logico-Philosophicus</td>
+                        <td>Ludwig Wittgenstein</td>
+                        <td>155 TL</td>
+                        <td><button onclick="alert('Tractatus satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="180" onclick="sepetHesapla()"></td>
+                        <td>Bilgisayar Ağları</td>
+                        <td>Douglas Comer</td>
+                        <td>180 TL</td>
+                        <td><button onclick="alert('Bilgisayar Ağları satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="165" onclick="sepetHesapla()"></td>
+                        <td>Etin Cinsel Politikası</td>
+                        <td>Carol J. Adams</td>
+                        <td>165 TL</td>
+                        <td><button onclick="alert('Etin Cinsel Politikası satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="130" onclick="sepetHesapla()"></td>
+                        <td>Gerçek Mutluluğun Metafiziği</td>
+                        <td>Alain Badiou</td>
+                        <td>130 TL</td>
+                        <td><button onclick="alert('Gerçek Mutluluğun Metafiziği satın alındı!')">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="kitap-sec" value="140" onclick="sepetHesapla()"></td>
+                        <td>Yaşama Uğraşı</td>
+                        <td>Cesare Pavese</td>
+                        <td>140 TL</td>
+                        <td><button onclick="alert('Yaşama Uğraşı satın alındı!')">Satın Al</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="sepet-ozet">
+                <h3 id="sepet-toplam">Seçili Ürünler Toplamı: 0 TL</h3>
+                <button onclick="topluSatinAl()">Seçilenleri Satın Al</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="kapsayici">
+            <p>2026 Kitap Sepeti | Yavaş ama güvenilir.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/myscript.js"></script>
+</body>
+</html>
